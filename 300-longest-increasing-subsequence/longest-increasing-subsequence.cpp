@@ -4,9 +4,7 @@ public:
         if(curr>=nums.size()) return 0;
         if(dp[prev+1][curr]!=-1) return dp[prev+1][curr];
         int include=0;
-        if(prev==-1 || nums[prev]<nums[curr]){
-            include=1+recursion(nums,curr,curr+1,dp);
-        }
+        if(prev==-1 || nums[prev]<nums[curr]) include=1+recursion(nums,curr,curr+1,dp);
         int exclude=recursion(nums,prev,curr+1,dp);
         return dp[prev+1][curr]=max(include,exclude);
     }
