@@ -6,15 +6,9 @@ public:
         if(list2 == NULL) return list1;
 
         ListNode *head, *curr;
-
-        if(list1->val < list2->val){
-            head = curr = list1;
-            list1 = list1->next;
-        }
-        else{
-            head = curr = list2;
-            list2 = list2->next;
-        }
+        head=new ListNode(-1);
+        curr=head;
+        
 
         while(list1 != NULL && list2 != NULL){
             if(list1->val < list2->val){
@@ -33,6 +27,6 @@ public:
         else
             curr->next = list2;
 
-        return head;
+        return head->next;
     }
 };
