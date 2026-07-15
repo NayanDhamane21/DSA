@@ -1,9 +1,7 @@
 class Solution {
 public:
-    static bool comparator(vector<int>a, vector<int>b){
-        int diff1=abs(a[1]-a[0]);
-        int diff2=abs(b[1]-b[0]);
-        return diff1>diff2;
+    static bool comparator(vector<int>&a,vector<int>&b){
+        return abs(a[1]-a[0])>abs(b[1]-b[0]);
     }
     int twoCitySchedCost(vector<vector<int>>& costs) {
        sort(costs.begin(),costs.end(),comparator);
